@@ -1,13 +1,11 @@
 return {
   "mason-org/mason.nvim",
-  opts = {
-    ensure_installed = {
-      "prettier",
-      "stylua",
+  opts = function(_, opts)
+    vim.list_extend(opts.ensure_installed, {
       "shellcheck",
       "shfmt",
       "ruff",
       "clang-format",
-    },
-  },
+    })
+  end,
 }

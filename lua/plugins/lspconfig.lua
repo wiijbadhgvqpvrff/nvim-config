@@ -1,8 +1,7 @@
 return {
   "neovim/nvim-lspconfig",
   ---@class PluginLspOpts
-  opts = {
-    ---@type lspconfig.options
-    servers = {},
-  },
+  opts = function(_, opts)
+    vim.list_extend(opts.servers, {})
+  end,
 }
